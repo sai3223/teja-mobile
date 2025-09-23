@@ -7,7 +7,8 @@
     :root {--primary:#00f5ff;--secondary:#9d00ff;--bg:#050505;--text:#f1f1f1;}
     body {margin:0;font-family:'Segoe UI',sans-serif;background:radial-gradient(circle at 20% 30%,#0d0d22,#000);color:var(--text);}
     header {background:rgba(0,0,0,0.7);padding:1rem;text-align:center;}
-    header h1 {margin:0;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;color:transparent;}
+    header h1 {margin:0;background:linear-gradient(90deg,var(--primary),var(--secondary));
+               -webkit-background-clip:text;color:transparent;}
     nav a {color:var(--text);margin:0 0.8rem;text-decoration:none;font-weight:bold;position:relative;}
     nav a::after {content:"";position:absolute;width:0;height:2px;bottom:-4px;left:0;background:var(--primary);transition:0.3s;}
     nav a:hover::after {width:100%;}
@@ -16,9 +17,14 @@
     h2 {color:var(--primary);}
     p {line-height:1.6;}
     footer {text-align:center;padding:1rem;background:#0a0a0a;color:#777;margin-top:2rem;}
-    .btn {display:inline-block;padding:0.7rem 1.4rem;margin-top:1rem;background:linear-gradient(90deg,var(--primary),var(--secondary));
-          border:none;border-radius:25px;color:#fff;font-weight:bold;box-shadow:0 0 20px var(--secondary);cursor:pointer;}
+    .btn {display:inline-block;padding:0.7rem 1.4rem;margin-top:1rem;
+          background:linear-gradient(90deg,var(--primary),var(--secondary));
+          border:none;border-radius:25px;color:#fff;font-weight:bold;
+          box-shadow:0 0 20px var(--secondary);cursor:pointer;}
     .btn:hover {transform:scale(1.05);}
+    ul {list-style:none;padding:0;margin:1rem 0;}
+    li {margin:0.5rem 0;}
+    li strong {color:var(--secondary);}
   </style>
 </head>
 <body>
@@ -34,8 +40,17 @@
   <section>
     <div class="card">
       <h2>📞 24/7 Customer Support</h2>
-      <p>Our team is here for you **anytime, anywhere**. Whether you need help with an order, product information, or technical assistance, we provide **real-time solutions** via chat, phone, and email.</p>
-      <p>At Teja Mobiles, your satisfaction is our priority. Our dedicated experts ensure every issue is handled quickly and professionally.</p>
+      <p>We’re here for you around the clock. Whether you have questions about an order, need help with a product, or require technical assistance, our support team is always ready to assist.</p>
+
+      <h3 style="color:var(--secondary);margin-top:1.5rem;">Contact Us Anytime</h3>
+      <ul>
+        <li><strong>📧 Email:</strong> support@tejasmobiles.com</li>
+        <li><strong>📞 Phone:</strong> +91-98765-43210</li>
+        <li><strong>💬 Live Chat:</strong> Available on our website’s bottom-right corner</li>
+      </ul>
+
+      <p>Expect prompt, professional responses from our experts who are dedicated to providing an exceptional customer experience.</p>
+
       <button class="btn" onclick="window.location.href='index.html#products'">Explore Products</button>
     </div>
   </section>
