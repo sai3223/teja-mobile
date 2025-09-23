@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Checkout - Teja Mobiles</title>
+<style>
+  body {background:#111;color:#eee;font-family:Arial;margin:0;padding:1rem;}
+  h2 {text-align:center;color:#0ff;}
+  form {max-width:400px;margin:auto;background:#1b1b1b;padding:1rem;border-radius:10px;box-shadow:0 0 10px #000;}
+  label {display:block;margin-top:1rem;}
+  input {width:100%;padding:0.5rem;border:none;border-radius:5px;margin-top:0.3rem;}
+  .product-list {background:#222;padding:1rem;border-radius:10px;margin:1rem 0;}
+  button {background:#0ff;color:#000;border:none;padding:0.7rem;width:100%;border-radius:5px;cursor:pointer;font-weight:bold;margin-top:1rem;}
+  button:hover {opacity:0.8;}
+</style>
+</head>
+<body>
+<h2>Checkout</h2>
+<div class="product-list" id="productList"></div>
+<form id="checkoutForm">
+  <label>Full Name<input type="text" id="name" required></label>
+  <label>Email<input type="email" id="email" required></label>
+  <label>Address<input type="text" id="address" required></label>
+  <button type="submit">Proceed to Payment</button>
+</form>
+<script>
+  const selected = JSON.parse(localStorage.getItem('selectedProduct'));
+  const cart = JSON.parse(localStorage.getItem('cart')||'[]');
+  const productList = document.getElementById('productList');
+  if(selected){
+    productList.innerHTML = `<h3>Selected Product</h3><p>${selected.product} - ${selected.price}</p>`;
+  } else if(cart.length){
+    productList.innerHTML = "<h3>Cart Items</h3>" + cart.map(c=>`<p>${c.product} - ${c.price}</p>`).join('');
+  } else {
+    productList.innerHTML = "<p>No product selected.</p>";
+  }
+  document.getElementById('checkoutForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    localStorage.setItem('customerInfo', JSON.stringify({
+      name:document.getElementById('name').value,
+      email:document.getElementById('email').value,
+      address:document.getElementById('address').value
+    }));
+    window.location.href='payment.html';
+  });
+</script>
+</body>
+</html>
