@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-<title>24/7 Support - Teja Mobiles</title>
-<style>
-  body {font-family:Arial, sans-serif;background:#0B0C10;color:#EAEAEA;margin:0;padding:1rem;line-height:1.6;}
-  h1 {color:#00E0FF;text-align:center;}
-  a.back {display:inline-block;margin-top:1rem;padding:0.5rem 1rem;background:#00E0FF;color:#000;text-decoration:none;border-radius:5px;}
-  a.back:hover {opacity:0.8;}
-</style>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | Teja Mobiles</title>
+  <style>
+    :root {--primary:#00f5ff;--secondary:#9d00ff;--bg:#050505;--text:#f1f1f1;}
+    body {margin:0;font-family:'Segoe UI',sans-serif;background:radial-gradient(circle at 20% 30%,#0d0d22,#000);color:var(--text);}
+    header {background:rgba(0,0,0,0.7);padding:1rem;text-align:center;}
+    header h1 {margin:0;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;color:transparent;}
+    nav a {color:var(--text);margin:0 0.8rem;text-decoration:none;font-weight:bold;position:relative;}
+    nav a::after {content:"";position:absolute;width:0;height:2px;bottom:-4px;left:0;background:var(--primary);transition:0.3s;}
+    nav a:hover::after {width:100%;}
+    section {max-width:900px;margin:2rem auto;padding:1rem;text-align:center;}
+    .card {background:#101010;padding:2rem;border-radius:15px;box-shadow:0 0 20px rgba(0,245,255,0.2);}
+    h2 {color:var(--primary);}
+    p {line-height:1.6;}
+    footer {text-align:center;padding:1rem;background:#0a0a0a;color:#777;margin-top:2rem;}
+    .btn {display:inline-block;padding:0.7rem 1.4rem;margin-top:1rem;background:linear-gradient(90deg,var(--primary),var(--secondary));
+          border:none;border-radius:25px;color:#fff;font-weight:bold;box-shadow:0 0 20px var(--secondary);cursor:pointer;}
+    .btn:hover {transform:scale(1.05);}
+  </style>
 </head>
 <body>
-  <h1>📞 24/7 Support</h1>
-  <p>Need help? Our dedicated support team is available **24 hours a day, 7 days a week** to answer your questions and resolve any issues.</p>
-  <h3>Contact Options:</h3>
-  <ul>
-    <li>Email: support@tejasmobiles.com</li>
-    <li>Phone: +91-98765-43210</li>
-    <li>Live chat directly on our website.</li>
-  </ul>
-  <p>Whether it’s a product inquiry, order status, or technical assistance, we’re always ready to help you.</p>
-  <a class="back" href="index.html">⬅ Back to Home</a>
+  <header>
+    <h1>Teja Mobiles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="free-shipping.html">Free Shipping</a>
+      <a href="secure-payments.html">Secure Payments</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>📞 24/7 Customer Support</h2>
+      <p>Our team is here for you **anytime, anywhere**. Whether you need help with an order, product information, or technical assistance, we provide **real-time solutions** via chat, phone, and email.</p>
+      <p>At Teja Mobiles, your satisfaction is our priority. Our dedicated experts ensure every issue is handled quickly and professionally.</p>
+      <button class="btn" onclick="window.location.href='index.html#products'">Explore Products</button>
+    </div>
+  </section>
+
+  <footer>© 2025 Teja Mobiles</footer>
 </body>
 </html>
