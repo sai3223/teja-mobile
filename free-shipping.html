@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Free Shipping - Teja Mobiles</title>
-<style>
-  body {font-family:Arial, sans-serif;background:#0B0C10;color:#EAEAEA;margin:0;padding:1rem;line-height:1.6;}
-  h1 {color:#00E0FF;text-align:center;}
-  a.back {display:inline-block;margin-top:1rem;padding:0.5rem 1rem;background:#00E0FF;color:#000;text-decoration:none;border-radius:5px;}
-  a.back:hover {opacity:0.8;}
-</style>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Shipping | Teja Mobiles</title>
+  <style>
+    :root {
+      --primary:#00f5ff; --secondary:#9d00ff; --bg:#050505; --text:#f1f1f1;
+    }
+    body {margin:0;font-family:'Segoe UI',sans-serif;background:radial-gradient(circle at 20% 30%,#0d0d22,#000);color:var(--text);}
+    header {background:rgba(0,0,0,0.7);padding:1rem;text-align:center;}
+    header h1 {margin:0;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;color:transparent;font-size:1.6rem;}
+    nav a {color:var(--text);margin:0 0.8rem;text-decoration:none;font-weight:bold;position:relative;}
+    nav a::after {content:"";position:absolute;width:0;height:2px;bottom:-4px;left:0;background:var(--primary);transition:0.3s;}
+    nav a:hover::after {width:100%;}
+    section {max-width:900px;margin:2rem auto;padding:1rem;text-align:center;}
+    .card {background:#101010;padding:2rem;border-radius:15px;box-shadow:0 0 20px rgba(0,245,255,0.2);}
+    h2 {color:var(--primary);}
+    p {line-height:1.6;}
+    footer {text-align:center;padding:1rem;background:#0a0a0a;color:#777;margin-top:2rem;}
+    .btn {display:inline-block;padding:0.7rem 1.4rem;margin-top:1rem;background:linear-gradient(90deg,var(--primary),var(--secondary));
+          border:none;border-radius:25px;color:#fff;font-weight:bold;box-shadow:0 0 20px var(--secondary);cursor:pointer;}
+    .btn:hover {transform:scale(1.05);}
+  </style>
 </head>
 <body>
-  <h1>🚚 Free Shipping</h1>
-  <p>At Teja Mobiles, we believe shopping should be easy and affordable. That’s why we offer **free shipping on all orders**, no matter your location.</p>
-  <ul>
-    <li>Fast delivery across all major cities.</li>
-    <li>No minimum purchase required.</li>
-    <li>Real-time tracking updates.</li>
-  </ul>
-  <p>We partner with trusted courier services to ensure your new device arrives safely and on time.</p>
-  <a class="back" href="index.html">⬅ Back to Home</a>
+  <header>
+    <h1>Teja Mobiles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="secure-payments.html">Secure Payments</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>🚚 Free Shipping Worldwide</h2>
+      <p>At Teja Mobiles, we believe in delivering your dream device without hidden costs. Every order is eligible for **free, fast, and insured shipping worldwide**.  
+      </p>
+      <p>Our logistics network ensures **real-time tracking**, secure packaging, and speedy delivery times. Whether you’re across town or across the globe, your new smartphone will arrive **quickly and safely**.</p>
+      <button class="btn" onclick="window.location.href='index.html#products'">Browse Products</button>
+    </div>
+  </section>
+
+  <footer>© 2025 Teja Mobiles</footer>
 </body>
 </html>
