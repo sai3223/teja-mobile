@@ -2,155 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teja Mobiles Store</title>
+  <title>Teja Mobiles Futuristic Store</title>
   <style>
     :root {
-      --primary:#6C63FF;
-      --secondary:#00E0FF;
-      --bg-dark:#0B0C10;
-      --text-light:#EAEAEA;
+      --primary: #00f5ff;
+      --secondary: #9d00ff;
+      --bg-dark: #050505;
+      --card-bg: #101010;
+      --text-light: #f1f1f1;
     }
     body {
-      margin:0;
-      font-family:Arial, sans-serif;
-      background: linear-gradient(135deg,#0B0C10,#1B1464);
-      color:var(--text-light);
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #0d0d22, #000);
+      color: var(--text-light);
+      overflow-x: hidden;
     }
     nav {
-      position:sticky;
-      top:0;
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(6px);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:0.7rem 1rem;
-      z-index:1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.8rem 1.5rem; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 1000;
     }
-    nav h1 { color:var(--secondary); margin:0; font-size:1.3rem; }
-    nav a { color:var(--text-light); margin:0 0.5rem; text-decoration:none; font-weight:bold; }
-    nav a:hover { color:var(--secondary); }
-
+    nav h1 { font-size: 1.4rem; background: linear-gradient(90deg,var(--primary),var(--secondary)); -webkit-background-clip:text; color:transparent; }
+    nav a { color: var(--text-light); text-decoration:none; margin:0 0.6rem; font-weight:bold; position:relative; }
+    nav a::after { content:""; position:absolute; width:0; height:2px; bottom:-4px; left:0; background:var(--primary); transition:0.3s; }
+    nav a:hover::after { width:100%; }
     .hero {
-      text-align:center;
-      padding:3rem 1rem;
-      background:url('https://via.placeholder.com/1200x400/222244/FFFFFF?text=Teja+Mobiles+Banner') center/cover no-repeat;
-      border-bottom:3px solid var(--secondary);
+      text-align: center; padding: 4rem 1rem 5rem;
+      background: linear-gradient(135deg,#0d0d22,#1b003a);
     }
-    .hero h2 {
-      font-size:2rem;
-      margin-bottom:0.5rem;
-      text-shadow:2px 2px #000;
+    .hero h2 { font-size:2.5rem; margin:0; background:linear-gradient(90deg,var(--primary),var(--secondary)); -webkit-background-clip:text; color:transparent; }
+    .hero p { font-size:1.2rem; opacity:0.8; }
+    .btn {
+      display:inline-block; margin-top:1.2rem; padding:0.8rem 1.5rem;
+      border:none; border-radius:30px; color:#fff; cursor:pointer; font-weight:bold;
+      background: linear-gradient(90deg,var(--primary),var(--secondary));
+      position:relative; overflow:hidden; box-shadow:0 0 20px var(--secondary);
+      transition: transform 0.3s;
     }
-    .hero p {
-      font-size:1.2rem;
-      color:#ddd;
+    .btn::before {
+      content:""; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+      background: radial-gradient(circle,rgba(255,255,255,0.3) 0%,transparent 70%);
+      transform: scale(0); transition: transform 0.5s;
     }
-    .hero button {
-      margin-top:1rem;
-      padding:0.7rem 1.2rem;
-      border:none;
-      border-radius:25px;
-      background:var(--secondary);
-      color:#000;
-      font-weight:bold;
-      cursor:pointer;
-      transition:transform 0.2s;
-    }
-    .hero button:hover {
-      transform:scale(1.1);
-    }
-
-    .video-container {
-      display:flex;
-      justify-content:center;
-      margin:2rem 1rem;
-    }
-    .video-container iframe {
-      width:100%;
-      max-width:560px;
-      height:315px;
-      border: none;
-      border-radius:10px;
-      box-shadow:0 0 20px rgba(0,0,0,0.5);
-    }
+    .btn:hover::before { transform: scale(1); }
+    .btn:hover { transform:scale(1.1); }
 
     .highlights {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      padding:2rem 1rem;
-      gap:1rem;
-      background:#111;
+      display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; padding:2rem 1rem;
     }
     .highlight {
-      flex:1 1 220px;
-      background:#1F1F2E;
-      padding:1rem;
-      border-radius:10px;
-      text-align:center;
-      box-shadow:0 0 10px #000;
-      color:var(--text-light);
-      text-decoration:none;
-      transition:transform 0.2s;
+      flex:1 1 240px; background:var(--card-bg); padding:1.5rem; text-align:center; border-radius:15px;
+      box-shadow:0 0 15px rgba(0,245,255,0.2);
+      transition:transform 0.3s, box-shadow 0.3s;
     }
     .highlight:hover {
       transform:translateY(-5px);
-      background:#262640;
+      box-shadow:0 0 25px rgba(157,0,255,0.5);
     }
-    .highlight h3 { color:var(--secondary); }
+    .highlight h3 { color:var(--primary); }
+
+    .video-container {
+      display:flex; justify-content:center; margin:3rem 1rem;
+    }
+    .video-container iframe {
+      width:100%; max-width:600px; height:340px; border:none; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.7);
+    }
 
     h2.section-title {
-      text-align:center;
-      margin:2rem 0;
-      color:var(--secondary);
+      text-align:center; margin:2rem 0; color:var(--primary);
+      text-shadow:0 0 15px rgba(0,245,255,0.5);
     }
+
     .products {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:1rem;
-      padding:1rem;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; padding:1rem;
     }
     .card {
-      background:#1F1F2E;
-      border-radius:12px;
-      overflow:hidden;
-      box-shadow:0 0 10px rgba(0,0,0,0.5);
+      background:var(--card-bg); border-radius:12px; overflow:hidden; text-align:center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow:0 0 15px rgba(0,0,0,0.6);
+    }
+    .card:hover { transform:translateY(-5px); box-shadow:0 0 25px rgba(0,245,255,0.3); }
+    .card img { width:100%; height:160px; object-fit:cover; }
+    .card h3 { color:var(--secondary); margin:0.5rem 0; }
+    .price { color:#0f0; font-weight:bold; margin:0.5rem 0; }
+    .buy, .cart {
+      margin:0.3rem; padding:0.5rem 1rem; border:none; border-radius:20px; cursor:pointer; font-weight:bold;
+      background: linear-gradient(90deg,var(--primary),var(--secondary));
+      color:#fff; box-shadow:0 0 15px rgba(0,245,255,0.3);
       transition:transform 0.3s;
     }
-    .card:hover { transform:translateY(-5px); }
-    .card img {
-      width:100%;
-      height:150px;
-      object-fit:cover;
-    }
-    .card-content { padding:1rem; }
-    .card h3 { margin:0 0 0.5rem; color:var(--secondary); }
-    .price { color:#0f0; font-weight:bold; margin:0.5rem 0; }
-    button.buy, button.cart {
-      padding:0.5rem 1rem;
-      margin:0.2rem;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-      font-weight:bold;
-    }
-    .buy { background:var(--primary); color:#fff; }
-    .cart { background:var(--secondary); color:#000; }
-    button:hover { opacity:0.85; }
+    .buy:hover, .cart:hover { transform:scale(1.1); }
 
-    footer {
-      background:#111;
-      padding:1rem;
-      text-align:center;
-      color:#888;
-      font-size:0.9rem;
-    }
-    footer a {
-      color:var(--secondary);
-      margin:0 0.5rem;
-      text-decoration:none;
-    }
+    footer { background:#0a0a0a; text-align:center; padding:1rem; font-size:0.9rem; color:#777; }
+    footer a { color:var(--secondary); margin:0 0.5rem; text-decoration:none; }
     footer a:hover { text-decoration:underline; }
   </style>
 </head>
@@ -164,12 +109,27 @@
   </nav>
 
   <section class="hero">
-    <h2>The Future of Smartphones</h2>
-    <p>Explore the latest flagship devices at unbeatable prices.</p>
-    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+    <h2>Next-Gen Smartphones</h2>
+    <p>Experience innovation with a futuristic touch.</p>
+    <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
   </section>
 
-  <!-- Embedded Video Section -->
+  <section id="highlights" class="highlights">
+    <a href="free-shipping.html" class="highlight">
+      <h3>🚚 Free Shipping</h3>
+      <p>Fast and free delivery on all orders.</p>
+    </a>
+    <a href="secure-payments.html" class="highlight">
+      <h3>💳 Secure Payments</h3>
+      <p>Your transactions are protected with top security.</p>
+    </a>
+    <a href="support.html" class="highlight">
+      <h3>📞 24/7 Support</h3>
+      <p>We're here to assist anytime, anywhere.</p>
+    </a>
+  </section>
+
+  <!-- Video positioned after highlights -->
   <section class="video-container">
     <iframe 
       src="https://www.youtube.com/embed/BU9gKr1miS8" 
@@ -179,101 +139,58 @@
     </iframe>
   </section>
 
-  <section id="highlights" class="highlights">
-    <a href="free-shipping.html" class="highlight">
-      <h3>🚚 Free Shipping</h3>
-      <p>Enjoy fast and free delivery on all orders.</p>
-    </a>
-    <a href="secure-payments.html" class="highlight">
-      <h3>💳 Secure Payments</h3>
-      <p>Your transactions are protected with top security.</p>
-    </a>
-    <a href="support.html" class="highlight">
-      <h3>📞 24/7 Support</h3>
-      <p>We’re here to assist you anytime, anywhere.</p>
-    </a>
-  </section>
-
-  <h2 id="products" class="section-title">Our Latest Mobiles</h2>
+  <h2 id="products" class="section-title">Latest Mobiles</h2>
   <section class="products">
     <div class="card">
-      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=iPhone+15" alt="iPhone 15">
-      <div class="card-content">
-        <h3>iPhone 15</h3>
-        <p>Sleek design with powerful performance.</p>
-        <p class="price">$899</p>
-        <button class="buy" onclick="buyNow('iPhone 15','$899')">Buy Now</button>
-        <button class="cart" onclick="addToCart('iPhone 15','$899')">Add to Cart</button>
-      </div>
+      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=iPhone+15">
+      <h3>iPhone 15</h3><p>Sleek design and power.</p><p class="price">$899</p>
+      <button class="buy" onclick="buyNow('iPhone 15','$899')">Buy Now</button>
+      <button class="cart" onclick="addToCart('iPhone 15','$899')">Add to Cart</button>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=iPhone+16" alt="iPhone 16">
-      <div class="card-content">
-        <h3>iPhone 16</h3>
-        <p>Cutting-edge speed and features.</p>
-        <p class="price">$999</p>
-        <button class="buy" onclick="buyNow('iPhone 16','$999')">Buy Now</button>
-        <button class="cart" onclick="addToCart('iPhone 16','$999')">Add to Cart</button>
-      </div>
+      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=iPhone+16">
+      <h3>iPhone 16</h3><p>Cutting-edge features.</p><p class="price">$999</p>
+      <button class="buy" onclick="buyNow('iPhone 16','$999')">Buy Now</button>
+      <button class="cart" onclick="addToCart('iPhone 16','$999')">Add to Cart</button>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=Galaxy+S25" alt="Galaxy S25">
-      <div class="card-content">
-        <h3>Galaxy S25</h3>
-        <p>Vibrant display with stunning cameras.</p>
-        <p class="price">$899</p>
-        <button class="buy" onclick="buyNow('Galaxy S25','$899')">Buy Now</button>
-        <button class="cart" onclick="addToCart('Galaxy S25','$899')">Add to Cart</button>
-      </div>
+      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=Galaxy+S25">
+      <h3>Galaxy S25</h3><p>Brilliant display.</p><p class="price">$899</p>
+      <button class="buy" onclick="buyNow('Galaxy S25','$899')">Buy Now</button>
+      <button class="cart" onclick="addToCart('Galaxy S25','$899')">Add to Cart</button>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=Pixel+10" alt="Pixel 10">
-      <div class="card-content">
-        <h3>Pixel 10</h3>
-        <p>Google’s smartest camera phone.</p>
-        <p class="price">$799</p>
-        <button class="buy" onclick="buyNow('Pixel 10','$799')">Buy Now</button>
-        <button class="cart" onclick="addToCart('Pixel 10','$799')">Add to Cart</button>
-      </div>
+      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=Pixel+10">
+      <h3>Pixel 10</h3><p>Smart camera tech.</p><p class="price">$799</p>
+      <button class="buy" onclick="buyNow('Pixel 10','$799')">Buy Now</button>
+      <button class="cart" onclick="addToCart('Pixel 10','$799')">Add to Cart</button>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=iPhone+17" alt="iPhone 17">
-      <div class="card-content">
-        <h3>iPhone 17</h3>
-        <p>The ultimate innovation in smartphones.</p>
-        <p class="price">$1199</p>
-        <button class="buy" onclick="buyNow('iPhone 17','$1199')">Buy Now</button>
-        <button class="cart" onclick="addToCart('iPhone 17','$1199')">Add to Cart</button>
-      </div>
+      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=iPhone+17">
+      <h3>iPhone 17</h3><p>The next level.</p><p class="price">$1199</p>
+      <button class="buy" onclick="buyNow('iPhone 17','$1199')">Buy Now</button>
+      <button class="cart" onclick="addToCart('iPhone 17','$1199')">Add to Cart</button>
     </div>
     <div class="card">
-      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=OnePlus+13" alt="OnePlus 13">
-      <div class="card-content">
-        <h3>OnePlus 13</h3>
-        <p>Flagship killer performance.</p>
-        <p class="price">$749</p>
-        <button class="buy" onclick="buyNow('OnePlus 13','$749')">Buy Now</button>
-        <button class="cart" onclick="addToCart('OnePlus 13','$749')">Add to Cart</button>
-      </div>
+      <img src="https://via.placeholder.com/300x150/6C63FF/FFFFFF?text=OnePlus+13">
+      <h3>OnePlus 13</h3><p>Flagship killer.</p><p class="price">$749</p>
+      <button class="buy" onclick="buyNow('OnePlus 13','$749')">Buy Now</button>
+      <button class="cart" onclick="addToCart('OnePlus 13','$749')">Add to Cart</button>
     </div>
   </section>
 
-  <footer>
-    © 2025 Teja Mobiles | 
-    <a href="#">Privacy</a> | 
-    <a href="#">Terms</a>
-  </footer>
+  <footer>© 2025 Teja Mobiles | <a href="#">Privacy</a> | <a href="#">Terms</a></footer>
 
   <script>
-    function buyNow(product, price) {
+    function buyNow(product, price){
       localStorage.setItem('selectedProduct', JSON.stringify({product,price}));
-      window.location.href = 'form.html';
+      window.location.href='form.html';
     }
-    function addToCart(product, price) {
+    function addToCart(product, price){
       const cart = JSON.parse(localStorage.getItem('cart')||'[]');
       cart.push({product,price});
       localStorage.setItem('cart', JSON.stringify(cart));
-      window.location.href = 'form.html';
+      window.location.href='form.html';
     }
   </script>
 </body>
