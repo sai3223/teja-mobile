@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Payment - Teja Mobiles</title>
+<style>
+  body {background:#111;color:#eee;font-family:Arial;margin:0;padding:1rem;}
+  h2 {text-align:center;color:#0ff;}
+  form {max-width:400px;margin:auto;background:#1b1b1b;padding:1rem;border-radius:10px;box-shadow:0 0 10px #000;}
+  label {display:block;margin-top:1rem;}
+  input {width:100%;padding:0.5rem;border:none;border-radius:5px;margin-top:0.3rem;}
+  button {background:#0ff;color:#000;border:none;padding:0.7rem;width:100%;border-radius:5px;cursor:pointer;font-weight:bold;margin-top:1rem;}
+  button:hover {opacity:0.8;}
+</style>
+</head>
+<body>
+<h2>Payment</h2>
+<form id="paymentForm">
+  <label>Card Number<input type="text" maxlength="16" required></label>
+  <label>Expiry Date<input type="text" placeholder="MM/YY" required></label>
+  <label>CVV<input type="password" maxlength="3" required></label>
+  <button type="submit">Proceed to Pay</button>
+</form>
+<script>
+  document.getElementById('paymentForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    window.location.href='thankyou.html';
+  });
+</script>
+</body>
+</html>
